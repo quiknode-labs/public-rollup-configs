@@ -1,0 +1,69 @@
+{
+  "chain": {
+    "info-json": "[{\"chain-id\":242070,\"parent-chain-id\":421614,\"parent-chain-is-arbitrum\":true,\"chain-name\":\"Advlayer Testnet\",\"chain-config\":{\"chainId\":242070,\"homesteadBlock\":0,\"daoForkBlock\":null,\"daoForkSupport\":true,\"eip150Block\":0,\"eip150Hash\":\"0x0000000000000000000000000000000000000000000000000000000000000000\",\"eip155Block\":0,\"eip158Block\":0,\"byzantiumBlock\":0,\"constantinopleBlock\":0,\"petersburgBlock\":0,\"istanbulBlock\":0,\"muirGlacierBlock\":0,\"berlinBlock\":0,\"londonBlock\":0,\"clique\":{\"period\":0,\"epoch\":0},\"arbitrum\":{\"EnableArbOS\":true,\"AllowDebugPrecompiles\":false,\"DataAvailabilityCommittee\":true,\"InitialArbOSVersion\":32,\"InitialChainOwner\":\"0x6eC8f7eBBC6F6D25FC80e6096E1A8397b4A3EE64\",\"GenesisBlockNum\":0}},\"rollup\":{\"bridge\":\"0x45201131adA2d942ae688e4fE3cF335911C89fc5\",\"inbox\":\"0x0192dD0F1b07397276E74F8039219E08Cf8fD335\",\"sequencer-inbox\":\"0x3B35D3d677BC5E2A2AeD5e894FcC45BC96bd2DE7\",\"rollup\":\"0x83bcdbaa9883743864A114deB525764aB8300887\",\"validator-utils\":\"0x71708D94031388892fa51f4EE63C1a4C10910504\",\"validator-wallet-creator\":\"0xFFd13F708c693E7Ce2B8AF84Be2Ca5341C4D7aD2\",\"deployed-at\":2945429}}]",
+    "name": "Advlayer Testnet"
+  },
+  "parent-chain": {
+    "connection": {
+      "url": "https://bepolia.rpc.berachain.com/"
+    }
+  },
+  "http": {
+    "addr": "0.0.0.0",
+    "port": 8449,
+    "vhosts": ["*"],
+    "corsdomain": ["*"],
+    "api": ["eth", "net", "web3", "arb", "debug"]
+  },
+  "node": {
+    "sequencer": true,
+    "delayed-sequencer": {
+      "enable": true,
+      "use-merge-finality": false,
+      "finalize-distance": 1
+    },
+    "batch-poster": {
+      "max-size": 90000,
+      "enable": true,
+      "parent-chain-wallet": {
+        "private-key": ""
+      }
+    },
+    "staker": {
+      "enable": true,
+      "strategy": "MakeNodes",
+      "parent-chain-wallet": {
+        "private-key": ""
+      }
+    },
+    "dangerous": {
+      "no-sequencer-coordinator": true,
+      "disable-blob-reader": false
+    },
+    "data-availability": {
+      "enable": true,
+      "sequencer-inbox-address": "0x3B35D3d677BC5E2A2AeD5e894FcC45BC96bd2DE7",
+      "parent-chain-node-url": "https://bepolia.rpc.berachain.com/",
+      "rest-aggregator": {
+        "enable": true,
+        "urls": ["http://localhost:9877"]
+      },
+      "rpc-aggregator": {
+        "enable": true,
+        "assumed-honest": 1,
+        "backends": "[{\"url\":\"http://localhost:9876\",\"pubkey\":\"YAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==\",\"signermask\":1}]"
+      }
+    }
+  },
+  "execution": {
+    "forwarding-target": "",
+    "sequencer": {
+      "enable": true,
+      "max-tx-data-size": 85000,
+      "max-block-speed": "250ms"
+    },
+    "caching": {
+      "archive": true
+    }
+  }
+}
