@@ -2,7 +2,7 @@
   "chain-id": 9988,
   "parent-chain-id": 80094,
   "parent-chain-is-arbitrum": false,
-  "chain-name": "My Orbit Chain",
+  "chain-name": "advlayer-mainnet",
   "chain-config": {
     "homesteadBlock": 0,
     "daoForkBlock": null,
