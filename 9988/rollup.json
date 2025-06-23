@@ -1,0 +1,41 @@
+{
+  "chain-id": 9988,
+  "parent-chain-id": 80094,
+  "parent-chain-is-arbitrum": false,
+  "chain-name": "advlayer-mainnet",
+  "chain-config": {
+    "homesteadBlock": 0,
+    "daoForkBlock": null,
+    "daoForkSupport": true,
+    "eip150Block": 0,
+    "eip150Hash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+    "eip155Block": 0,
+    "eip158Block": 0,
+    "byzantiumBlock": 0,
+    "constantinopleBlock": 0,
+    "petersburgBlock": 0,
+    "istanbulBlock": 0,
+    "muirGlacierBlock": 0,
+    "berlinBlock": 0,
+    "londonBlock": 0,
+    "clique": { "period": 0, "epoch": 0 },
+    "arbitrum": {
+      "EnableArbOS": true,
+      "AllowDebugPrecompiles": false,
+      "DataAvailabilityCommittee": true,
+      "InitialArbOSVersion": 32,
+      "GenesisBlockNum": 0,
+      "InitialChainOwner": "0x2A7b1e758EA964167D2c21b024A9C8CefE27e282"
+    },
+    "chainId": 9988
+  },
+  "rollup": {
+    "bridge": "0x13745683a2e75252CE39A0DAf8AF14f5d9121842",
+    "inbox": "0x85c53e7B91CDA9f7c92d257fFEEe8ED633a13736",
+    "sequencer-inbox": "0x6d7b4421ab7247015f0B11f016B87c38666a858e",
+    "rollup": "0x1060Ce7053a9C8FcBc592508B842357a4E93e7Eb",
+    "validator-utils": "0x12b415DBBAAFC0196B1eB0E8eCB24134A683CA65",
+    "validator-wallet-creator": "0x444b3d7c6A7A5D5dd4E6feFE0A0113F6cdC9b2bB",
+    "deployed-at": 4996820
+  }
+}
