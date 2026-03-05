@@ -1,0 +1,84 @@
+{
+    "chain": {
+      "info-json": "[{\"chain-id\":7791,\"parent-chain-id\":42161,\"parent-chain-is-arbitrum\":true,\"chain-name\":\"diamondz-zshadow\",\"chain-config\":{\"homesteadBlock\":0,\"daoForkBlock\":null,\"daoForkSupport\":true,\"eip150Block\":0,\"eip150Hash\":\"0x0000000000000000000000000000000000000000000000000000000000000000\",\"eip155Block\":0,\"eip158Block\":0,\"byzantiumBlock\":0,\"constantinopleBlock\":0,\"petersburgBlock\":0,\"istanbulBlock\":0,\"muirGlacierBlock\":0,\"berlinBlock\":0,\"londonBlock\":0,\"clique\":{\"period\":0,\"epoch\":0},\"arbitrum\":{\"EnableArbOS\":true,\"AllowDebugPrecompiles\":false,\"DataAvailabilityCommittee\":true,\"InitialArbOSVersion\":32,\"GenesisBlockNum\":0,\"MaxCodeSize\":24576,\"MaxInitCodeSize\":49152,\"InitialChainOwner\":\"0x611C342C4F9Fcc482017A1e9dde2E2692AAc27F4\"},\"chainId\":7791},\"rollup\":{\"bridge\":\"0x8B0A713F8F739473bdbb77fdcb41a63C56e58fB9\",\"inbox\":\"0x85b0A408B56c7733956802D6fDdc5412C718a270\",\"sequencer-inbox\":\"0x1184479D75cEf13B81a4cbE13fA627736E4B8Efa\",\"rollup\":\"0xB7cB2e7425A9804b8b7fa11ED6C12824E8e3cFB0\",\"validator-wallet-creator\":\"0x69A6dE0B9BeC9edb33805167327a6ABEf0C69Fd2\",\"stake-token\":\"0x82aF49447D8a07e3bd95BD0d56f35241523fBab1\",\"deployed-at\":435877045}}]",
+      "name": "diamondz-zshadow"
+    },
+    "parent-chain": {
+      "connection": {
+        "url": "https://arb1.arbitrum.io/rpc"
+      }
+    },
+    "http": {
+      "addr": "0.0.0.0",
+      "port": 8449,
+      "vhosts": [
+        "*"
+      ],
+      "corsdomain": [
+        "*"
+      ],
+      "api": [
+        "eth",
+        "net",
+        "web3",
+        "arb",
+        "debug"
+      ]
+    },
+    "node": {
+      "sequencer": true,
+      "delayed-sequencer": {
+        "enable": true,
+        "use-merge-finality": false,
+        "finalize-distance": 1
+      },
+      "batch-poster": {
+        "max-size": 90000,
+        "enable": true,
+        "parent-chain-wallet": {
+          "private-key": ""
+        }
+      },
+      "staker": {
+        "enable": true,
+        "strategy": "MakeNodes",
+        "parent-chain-wallet": {
+          "private-key": ""
+        }
+      },
+      "dangerous": {
+        "no-sequencer-coordinator": true,
+        "disable-blob-reader": false
+      },
+      "bold": {
+        "strategy": "MakeNodes"
+      },
+      "data-availability": {
+        "enable": true,
+        "sequencer-inbox-address": "0x1184479D75cEf13B81a4cbE13fA627736E4B8Efa",
+        "parent-chain-node-url": "https://arb1.arbitrum.io/rpc",
+        "rest-aggregator": {
+          "enable": true,
+          "urls": [
+            "http://localhost:9877"
+          ]
+        },
+        "rpc-aggregator": {
+          "enable": true,
+          "assumed-honest": 1,
+          "backends": "[{\"url\":\"http://localhost:9876\",\"pubkey\":\"YAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==\",\"signermask\":1}]"
+        }
+      }
+    },
+    "execution": {
+      "forwarding-target": "",
+      "sequencer": {
+        "enable": true,
+        "max-tx-data-size": 85000,
+        "max-block-speed": "250ms"
+      },
+      "caching": {
+        "archive": true
+      }
+    }
+  }
